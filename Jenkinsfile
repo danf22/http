@@ -18,7 +18,7 @@ pipeline {
     stage('run') {
       steps {
         cd '/bin/sh /home/ubuntu/diocesan-docker-container/'
-        ./setup.sh
+        sh './setup.sh'
       }
 }
 }
