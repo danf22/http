@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('download repositorio fron') {
       steps {
-        sh 'git clone https://github.com/DiocesanInc/diocesan-eva-fe.git /home/ubuntu/diocesan-docker-container/'
-        sh 'mv /home/ubuntu/diocesan-docker-container/diocesan-eva-fe home/ubuntu/diocesan-docker-container/app-frontend'
+        sh 'rm -rf /home/ubuntu/diocesan-docker-container/app-frontend'
+        sh 'git clone https://github.com/DiocesanInc/diocesan-eva-fe.git /home/ubuntu/diocesan-docker-container/app-frontend'
       }
     }
     stage('download repositorio back') {
