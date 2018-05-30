@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Inicio') {
       steps {
-        echo 'nose'
+        echo 'docker run -d  lephare/apache'
       }
     }
     stage('test2') {
