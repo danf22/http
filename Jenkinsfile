@@ -15,5 +15,11 @@ pipeline {
         sh 'git clone https://github.com/DiocesanInc/diocesan-api.git /home/ubuntu/diocesan-docker-container/app-backend'
       }
     }
+    stage('run') {
+      steps {
+        sh 'chmod u+x /home/ubuntu/diocesan-docker-container/setup.sh'
+        sh '/home/ubuntu/diocesan-docker-container/setup.sh'
+      }
+}
 }
 }
