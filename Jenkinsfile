@@ -1,14 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('Inicio') {
+    stage('download repositorio fron') {
       steps {
-        sh 'docker run -d  lephare/apache'
+        sh 'git clone https://github.com/DiocesanInc/diocesan-eva-fe.git /home/ubuntu/diocesan-docker-container/'
+        sh 'mv /home/ubuntu/diocesan-docker-container/diocesan-eva-fe home/ubuntu/diocesan-docker-container/app-frontend'
       }
     }
-    stage('test2') {
+    stage('download repositorio back') {
       steps {
-        echo 'nose2a'
+        sh 'git clone https://github.com/DiocesanInc/diocesan-api.git /home/ubuntu/diocesan-docker-container/'
+        sh 'mv /home/ubuntu/diocesan-docker-container/diocesan-api home/ubuntu/diocesan-docker-container/app-backend'
       }
     }
   }
