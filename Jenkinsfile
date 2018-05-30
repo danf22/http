@@ -17,7 +17,6 @@ pipeline {
     }
     stage('run') {
       steps {
-        sh 'chmod u+x /home/ubuntu/diocesan-docker-container/setup.sh'
         sh '/home/ubuntu/diocesan-docker-container/setup.sh'
       }
 }
